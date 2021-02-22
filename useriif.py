@@ -64,7 +64,7 @@ def userSimilarity(train):
                     continue
                 if u2 not in C[u1]:
                     C[u1][u2] = 0
-                C[u1][u2] += 1
+                C[u1][u2] += 1 / math.log(1 + len(itemUser[item]))
     W = dict()
     for u1 in C:
         W[u1] = dict()
